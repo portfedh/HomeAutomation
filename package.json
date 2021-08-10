@@ -1,0 +1,12 @@
+{
+    "name": "CurrentSensorsMQTT",
+    "description": " An ESP32 Current Sensor for checking electricity usage.",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "CurrentSensor.json",
+            "credentialsFile": "CurrentSensor_cred.json"
+        }
+    }
+}

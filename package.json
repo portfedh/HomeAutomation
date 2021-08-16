@@ -1,12 +1,17 @@
 {
-    "name": "CurrentSensorsMQTT",
-    "description": " An ESP32 Current Sensor for checking electricity usage.",
+    "name": "HomeAutomation",
+    "description": "An IOT Home Automation Project",
     "version": "0.0.1",
-    "dependencies": {},
+    "dependencies": {
+        "node-red-contrib-google-sheets": "0.1.0",
+        "node-red-contrib-influxdb": "0.5.4",
+        "node-red-contrib-telegrambot": "8.9.6",
+        "node-red-dashboard": "2.28.1"
+    },
     "node-red": {
         "settings": {
-            "flowFile": "CurrentSensor.json",
-            "credentialsFile": "CurrentSensor_cred.json"
+            "flowFile": "HomeAutomation.json",
+            "credentialsFile": "HomeAutomation_cred.json"
         }
     }
 }

@@ -1,9 +1,30 @@
-CurrentSensorsMQTT
-==================
+# IOT Home Automation Project
+============================
 
- An ESP32 Current Sensor for checking electricity usage.
+## What it does
 
-### About
+I use the node-red interfase to read the sensors information from the following sources:
 
-This is your project's README.md file. It helps users understand what your
-project does, how to use it and anything else they may need to know.
+Sensors that report values through MQTT:
+- Electrical energy meter No. 1
+- Electrical energy meter No. 2
+- Electrical energy meter No. 3
+- Municipal line water Pressure
+- Water tank level
+
+Sensors that report values through an API:
+- Air quality sensor (Purple Air)
+- Outdoor weather station (Wunderground)
+
+## How to Install
+
+- Clone the repository from: [here](https://github.com/portfedh/HomeAutomation)
+- Edit the filename HomeAutomation_cred.json
+- Add your MQTT credentials
+- Add your InfluxDB credentials
+- Add your telegram credentials
+
+
+## How to Use
+- ToDo
+

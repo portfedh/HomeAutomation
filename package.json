@@ -1,9 +1,8 @@
 {
     "name": "HomeAutomation",
-    "description": "An IOT Home Automation Project",
+    "description": "A IOT Home Automation Project using Arduino, Node-red, Grafana and InfluxDB",
     "version": "0.0.1",
     "dependencies": {
-        "node-red-contrib-google-sheets": "0.1.0",
         "node-red-contrib-influxdb": "0.5.4",
         "node-red-contrib-telegrambot": "8.9.6",
         "node-red-dashboard": "2.28.1"

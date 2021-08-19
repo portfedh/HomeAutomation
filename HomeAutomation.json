@@ -483,8 +483,8 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 1020,
-        "y": 220,
+        "x": 1220,
+        "y": 260,
         "wires": [
             [
                 "a4cb2548.b653f",
@@ -504,8 +504,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1270,
-        "y": 180,
+        "x": 1470,
+        "y": 220,
         "wires": []
     },
     {
@@ -522,8 +522,8 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 1280,
-        "y": 220,
+        "x": 1480,
+        "y": 260,
         "wires": []
     },
     {
@@ -614,8 +614,9 @@
         "noerr": 0,
         "initialize": "",
         "finalize": "",
-        "x": 990,
-        "y": 80,
+        "libs": [],
+        "x": 1190,
+        "y": 120,
         "wires": [
             [
                 "8dc7cb4f.acd778",
@@ -637,8 +638,8 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 1260,
-        "y": 80,
+        "x": 1460,
+        "y": 120,
         "wires": []
     },
     {
@@ -705,8 +706,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "str",
-        "x": 740,
-        "y": 88,
+        "x": 940,
+        "y": 128,
         "wires": [
             [
                 "83fb1dcd.8f5df"
@@ -734,8 +735,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "str",
-        "x": 740,
-        "y": 220,
+        "x": 940,
+        "y": 260,
         "wires": [
             [
                 "1ce50914.739bbf"
@@ -781,8 +782,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1270,
-        "y": 40,
+        "x": 1470,
+        "y": 80,
         "wires": []
     },
     {
@@ -808,62 +809,9 @@
         "z": "9fa32e4d.fa3428",
         "name": "Retention Policies",
         "info": "Water Pressure\n-----------------\nMQTT Samples     = Every 5 minutes\n\nInfluxDB Storage = \n    Samples:      Every 5 minutes\n    Database:     Agua\n    Measurement:  Presion_Agua\n    Retention:    24 hours\n    \n    Samples:      Every 60 minutes\n    Database:     Agua\n    Measurement:  Presion_Agua_1h\n    Retention:    1 year\n    \n\n    \nEnergy Monitor\n-----------------\nMQTT Samples     = Every 5 minutes\n\nInfluxDB Storage = \n    Samples:      Every 5 minutes\n    Database:     Luz\n    Measurement:  Corriente_Luz\n    Retention:    1 month\n    \n\nPurpleAir Air Quality Monitor\n--------------------------------\nhttp request samples = Every 5 minutes\n\nInfluxDB Storage = \n    Samples:      Every 5 minutes\n    Database:     \n    Measurement:  PurpleAir\n    Retention:    1 month\n    \n    Samples:      Every 60 minutes\n    Database:     \n    Measurement:  PurpleAir_1h\n    Retention:    1 year\n    \nWeather Station\n------------------\nhttp request samples = Every 5 minutes\n\nInfluxDB Storage = \n    Samples:      Every 5 minutes\n    Database:     \n    Measurement:  IMEXICOC44\n    Retention:    1 month\n    \n    Samples:      Every 60 minutes\n    Database:     \n    Measurement:  IMEXICOC44_1h\n    Retention:    1 year\n\n\n    ",
-        "x": 710,
-        "y": 20,
+        "x": 910,
+        "y": 60,
         "wires": []
-    },
-    {
-        "id": "732340a6.4e9b98",
-        "type": "telegram sender",
-        "z": "9fa32e4d.fa3428",
-        "name": "Sender Test",
-        "bot": "b7ad8a00.961ca8",
-        "haserroroutput": true,
-        "outputs": 2,
-        "x": 1130,
-        "y": 900,
-        "wires": [
-            [],
-            [
-                "740c46d0.065ee"
-            ]
-        ]
-    },
-    {
-        "id": "740c46d0.065ee",
-        "type": "debug",
-        "z": "9fa32e4d.fa3428",
-        "name": "Telegram Test",
-        "active": true,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "statusVal": "",
-        "statusType": "auto",
-        "x": 1340,
-        "y": 800,
-        "wires": []
-    },
-    {
-        "id": "50d8b7f9.5c3f9",
-        "type": "function",
-        "z": "9fa32e4d.fa3428",
-        "name": "Telegram",
-        "func": "var Corriente_Medidor1 = 1; //flow.get(\"luz_medidor_1\");\n//Corriente_Medidor2:flow.get(\"luz_medidor_2\"),\n//Corriente_Medidor3:flow.get(\"luz_medidor_3\"),\n\n\nif (Corriente_Medidor1 >= 1) {\n   msg.payload = { \n    chatId:-419616352, \n    type:\"message\",\n    content:\"Function test message\"};\n} else {\n   msg.payload = null;\n}\n\nreturn msg;\n\n",
-        "outputs": 1,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "x": 920,
-        "y": 900,
-        "wires": [
-            [
-                "732340a6.4e9b98",
-                "740c46d0.065ee"
-            ]
-        ]
     },
     {
         "id": "be7a9f30.af1488",
@@ -879,18 +827,18 @@
                 "vt": "str"
             }
         ],
-        "repeat": "",
+        "repeat": "300",
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
         "topic": "",
-        "payload": "0",
+        "payload": "1",
         "payloadType": "num",
-        "x": 740,
-        "y": 900,
+        "x": 970,
+        "y": 860,
         "wires": [
             [
-                "50d8b7f9.5c3f9"
+                "886703d2cb8d2482"
             ]
         ]
     },
@@ -1006,8 +954,8 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 1290,
-        "y": 340,
+        "x": 1490,
+        "y": 380,
         "wires": []
     },
     {
@@ -1022,8 +970,8 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1270,
-        "y": 300,
+        "x": 1470,
+        "y": 340,
         "wires": []
     },
     {
@@ -1037,8 +985,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1020,
-        "y": 340,
+        "x": 1220,
+        "y": 380,
         "wires": [
             [
                 "80d223e7.cdac28",
@@ -1067,8 +1015,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "str",
-        "x": 740,
-        "y": 340,
+        "x": 940,
+        "y": 380,
         "wires": [
             [
                 "40fb5ef2.ff5168"
@@ -1088,8 +1036,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1030,
-        "y": 520,
+        "x": 1210,
+        "y": 560,
         "wires": [
             [
                 "9e901c71.4ce12"
@@ -1117,8 +1065,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "num",
-        "x": 760,
-        "y": 520,
+        "x": 940,
+        "y": 560,
         "wires": [
             [
                 "a4b00799.839d68"
@@ -1133,8 +1081,8 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 1230,
-        "y": 520,
+        "x": 1410,
+        "y": 560,
         "wires": [
             [
                 "85756c15.40f898"
@@ -1155,8 +1103,8 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 1600,
-        "y": 520,
+        "x": 1780,
+        "y": 560,
         "wires": []
     },
     {
@@ -1164,14 +1112,14 @@
         "type": "function",
         "z": "9fa32e4d.fa3428",
         "name": "Calidad Aire JSON",
-        "func": "\nmsg.payload = { \n    TimestampA:msg.payload.results[0].LastSeen,\n    TimestampB:msg.payload.results[1].LastSeen,\n    PM2_5ValueA:Number(msg.payload.results[0].PM2_5Value),\n    PM2_5ValueB:Number(msg.payload.results[1].PM2_5Value),\n    Humidity:Number(msg.payload.results[0].humidity),\n    Temp_f:Number(msg.payload.results[0].temp_f),\n    Pressure:Number(msg.payload.results[0].pressure),\n}\n\nreturn msg;",
+        "func": "flow.set(\"PM2_5AvgVal\",(Number(msg.payload.results[0].PM2_5Value)+Number(msg.payload.results[1].PM2_5Value))/2);\n\nmsg.payload = { \n    TimestampA:msg.payload.results[0].LastSeen,\n    TimestampB:msg.payload.results[1].LastSeen,\n    PM2_5ValueA:Number(msg.payload.results[0].PM2_5Value),\n    PM2_5ValueB:Number(msg.payload.results[1].PM2_5Value),\n    PM2_5AvgVal:(Number(msg.payload.results[0].PM2_5Value)+Number(msg.payload.results[1].PM2_5Value))/2,\n    Humidity:Number(msg.payload.results[0].humidity),\n    Temp_f:Number(msg.payload.results[0].temp_f),\n    Pressure:Number(msg.payload.results[0].pressure),\n}\n\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1390,
-        "y": 520,
+        "x": 1570,
+        "y": 560,
         "wires": [
             [
                 "b11dc5e2.41fef8",
@@ -1192,8 +1140,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1600,
-        "y": 480,
+        "x": 1780,
+        "y": 500,
         "wires": []
     },
     {
@@ -1202,8 +1150,8 @@
         "z": "9fa32e4d.fa3428",
         "name": "PurpleAirDataFormat",
         "info": "## Header Descriptions\nUTCDateTime: The Date and time derived from the Real Time Clock and synced with NTP where possible (in UTC).\nMac_address: The MAC address of the WiFi module on the sensor (used as an ID for the unit).\nFirmware_ver: Firmware version of the control board.\nHardware: Hardware the control board has detected.\ncurrent_temp_f: Current temperature in F.\nCurrent_humidity: Current Humidity in %.\nCurrent_dewpoint_f: Calculated dew point in F.\nPressure: Current pressure in millibars.\nAdc: The voltage reading on the analog input of the control board.\nMem: Free HEAP memory on the control board.\nRssi: WiFi signal strength in dBm\nUptime: Firmware uptime in seconds.\n\n\nPm1_0_atm: Channel A ATM PM1.0 particulate mass in ug/m3\nPm2_5_atm: Channel A ATM PM2.5 particulate mass in ug/m3\nPm10_0_atm: Channel A ATM PM10.0 particulate mass in ug/m3\nPm1_0_cf_1: Channel A CF=1 PM1.0 particulate mass in ug/m3\nPm2_5_cf_1: Channel A CF=1 PM2.5 particulate mass in ug/m3\nPm10_0_cf_1: Channel A CF=1 PM10.0 particulate mass in ug/m3\nP_0_3_um: Channel A 0.3 micrometer particle counts per deciliter of air\nP_0_5_um: Channel A 0.5 micrometer particle counts per deciliter of air\nP_1_0_um: Channel A 1.0 micrometer particle counts per deciliter of air\nP_2_5_um: Channel A 2.5 micrometer particle counts per deciliter of air\nP_5_0_um: Channel A 5.0 micrometer particle counts per deciliter of air\nP_10_0_um: Channel A 10.0 micrometer particle counts per deciliter of air\n\n\nPm1_0_atm_b: Channel B ATM PM1.0 particulate mass in ug/m3.\nPm2_5_atm_b: Channel B ATM PM2.5 particulate mass in ug/m3\nPm10_0_atm_b: Channel B ATM PM10.0 particulate mass in ug/m3\nPm1_0_cf_1_b: Channel B CF=1 PM1.0 particulate mass in ug/m3\nPm2_5_cf_1_b: Channel B CF=1 PM2.5 particulate mass in ug/m3\nPm10_0_cf_1_b: Channel B CF=1 PM10.0 particulate mass in ug/m3\nP_0_3_um_b: Channel B 0.3 micrometer particle counts per deciliter of air\nP_0_5_um_b: Channel B 0.5 micrometer particle counts per deciliter of air\nP_1_0_um_b: Channel B 1.0 micrometer particle counts per deciliter of air\nP_2_5_um_b: Channel B 2.5 micrometer particle counts per deciliter of air\nP_5_0_um_b: Channel B 5.0 micrometer particle counts per deciliter of air\nP_10_0_um_b: Channel B 10.0 micrometer particle counts per deciliter of air\n\nPA-II NOTES: Each sensor contains two identical laser counters, hence channel A and B. If these two channels do not agree to some extent then there is something wrong with one or both channels.\n\nPlantower PMS sensor notes: ATM is \"atmospheric\", meant to be used for outdoor applications CF=1 is meant to be used for indoor or controlled environment applications However, PurpleAir uses CF=1 values on the map. This value is lower than the ATM value in higher measured concentrations.",
-        "x": 720,
-        "y": 440,
+        "x": 920,
+        "y": 480,
         "wires": []
     },
     {
@@ -1227,8 +1175,8 @@
         "topic": "",
         "payload": "1",
         "payloadType": "num",
-        "x": 760,
-        "y": 640,
+        "x": 940,
+        "y": 680,
         "wires": [
             [
                 "6f428c1b.d0f174"
@@ -1248,8 +1196,8 @@
         "persist": false,
         "proxy": "",
         "authType": "",
-        "x": 1040,
-        "y": 640,
+        "x": 1220,
+        "y": 680,
         "wires": [
             [
                 "b8e7b776.d94ac8"
@@ -1264,8 +1212,8 @@
         "property": "payload",
         "action": "obj",
         "pretty": false,
-        "x": 1230,
-        "y": 640,
+        "x": 1410,
+        "y": 680,
         "wires": [
             [
                 "f330b337.86194"
@@ -1285,8 +1233,8 @@
         "targetType": "msg",
         "statusVal": "",
         "statusType": "auto",
-        "x": 1600,
-        "y": 600,
+        "x": 1780,
+        "y": 640,
         "wires": []
     },
     {
@@ -1300,8 +1248,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 1420,
-        "y": 640,
+        "x": 1600,
+        "y": 680,
         "wires": [
             [
                 "c021e878.361328",
@@ -1323,8 +1271,262 @@
         "retentionPolicyV18Flux": "",
         "org": "organisation",
         "bucket": "bucket",
-        "x": 1620,
-        "y": 640,
+        "x": 1800,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "9e578a6cf9805ce9",
+        "type": "switch",
+        "z": "9fa32e4d.fa3428",
+        "name": "Aire Ok",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "0",
+                "vt": "num",
+                "v2": "35",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1340,
+        "y": 920,
+        "wires": [
+            [
+                "f429c560f23c8645"
+            ]
+        ]
+    },
+    {
+        "id": "381e7d4b881dbb91",
+        "type": "change",
+        "z": "9fa32e4d.fa3428",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "El aire esta dlv.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 800,
+        "wires": [
+            [
+                "f6c0ca6708660c38"
+            ]
+        ]
+    },
+    {
+        "id": "ade27a838f9b7fc1",
+        "type": "switch",
+        "z": "9fa32e4d.fa3428",
+        "name": "Aire Feo",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "btwn",
+                "v": "36",
+                "vt": "num",
+                "v2": "50",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1340,
+        "y": 860,
+        "wires": [
+            [
+                "6faa305a0c61d051"
+            ]
+        ]
+    },
+    {
+        "id": "a96664a8d3106224",
+        "type": "switch",
+        "z": "9fa32e4d.fa3428",
+        "name": "Aire Culero",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gte",
+                "v": "50",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 1,
+        "x": 1350,
+        "y": 800,
+        "wires": [
+            [
+                "381e7d4b881dbb91"
+            ]
+        ]
+    },
+    {
+        "id": "6faa305a0c61d051",
+        "type": "change",
+        "z": "9fa32e4d.fa3428",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "El aire esta feo.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 860,
+        "wires": [
+            [
+                "f6c0ca6708660c38"
+            ]
+        ]
+    },
+    {
+        "id": "f429c560f23c8645",
+        "type": "change",
+        "z": "9fa32e4d.fa3428",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "El aire esta bien.",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 1540,
+        "y": 920,
+        "wires": [
+            [
+                "f6c0ca6708660c38"
+            ]
+        ]
+    },
+    {
+        "id": "f6c0ca6708660c38",
+        "type": "rbe",
+        "z": "9fa32e4d.fa3428",
+        "name": "Air Quality Change",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1770,
+        "y": 860,
+        "wires": [
+            [
+                "94e5e0517c77ce62"
+            ]
+        ]
+    },
+    {
+        "id": "587faa619b83e28d",
+        "type": "telegram sender",
+        "z": "9fa32e4d.fa3428",
+        "name": "Telegram Push",
+        "bot": "b7ad8a00.961ca8",
+        "haserroroutput": true,
+        "outputs": 2,
+        "x": 2140,
+        "y": 860,
+        "wires": [
+            [],
+            [
+                "dadd279dfd5f1031"
+            ]
+        ]
+    },
+    {
+        "id": "94e5e0517c77ce62",
+        "type": "function",
+        "z": "9fa32e4d.fa3428",
+        "name": "Telegram",
+        "func": "Mensaje = msg.payload\nPM2_5AvgVal = flow.get(\"PM2_5AvgVal\");\n\nmsg.payload = { \n    chatId:-419616352,\n    type:\"message\",\n    content:\"Hay \"+PM2_5AvgVal.toFixed(2)+\" PM2_5. \"+ Mensaje};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1960,
+        "y": 860,
+        "wires": [
+            [
+                "587faa619b83e28d"
+            ]
+        ]
+    },
+    {
+        "id": "886703d2cb8d2482",
+        "type": "function",
+        "z": "9fa32e4d.fa3428",
+        "name": "Test",
+        "func": "PM2_5AvgVal = flow.get(\"PM2_5AvgVal\");\n\nmsg.payload = PM2_5AvgVal\n\nreturn msg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1150,
+        "y": 860,
+        "wires": [
+            [
+                "a96664a8d3106224",
+                "ade27a838f9b7fc1",
+                "9e578a6cf9805ce9"
+            ]
+        ]
+    },
+    {
+        "id": "dadd279dfd5f1031",
+        "type": "debug",
+        "z": "9fa32e4d.fa3428",
+        "name": "Telegram",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 2320,
+        "y": 860,
         "wires": []
     }
 ]
